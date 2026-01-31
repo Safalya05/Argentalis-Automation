@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Argentalis Automation (OPC) Private Limited</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0b3c8c;
+      --secondary: #ffffff;
+      --accent: #e6eefb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--secondary);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .counter-section {
+      background: var(--accent);
+      text-align: center;
+    }
+
+    .counter-box {
+      background: white;
+      display: inline-block;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .counter-box h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .counter-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .carbon {
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 40px 10%;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer strong {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LANDING / HERO -->
+  <header>
+    <h1>Argentalis Automation (OPC) Private Limited</h1>
+    <p>Smart Home Automation for Comfort, Efficiency & Energy Savings</p>
+  </header>
+
+  <!-- ENERGY COUNTER -->
+  <section class="counter-section">
+    <div class="counter-box">
+      <h2>Energy Saved So Far</h2>
+      <div class="counter-value" id="energyCounter">0</div>
+      <div class="carbon" id="carbonText"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CAPABILITIES -->
+  <section>
+    <h2 style="text-align:center; color:#0b3c8c; margin-bottom:40px;">
+      Product Capabilities
+    </h2>
+
+    <div class="capabilities">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Lighting Automation">
+        <div class="card-content">
+          <h3>Lighting Automation</h3>
+          <p>Automated lighting based on schedules, occupancy and ambient conditions to reduce energy wastage.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1592928302636-c83cf1e1c887" alt="Appliance Control">
+        <div class="card-content">
+          <h3>Appliance Control</h3>
+          <p>Smart control of household appliances through mobile apps and centralized control panels.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558002038-1055907df827" alt="Energy Monitoring">
+        <div class="card-content">
+          <h3>Energy Monitoring</h3>
+          <p>Real-time energy consumption tracking to help users optimize usage and reduce electricity bills.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Smart Scheduling">
+        <div class="card-content">
+          <h3>Smart Scheduling</h3>
+          <p>Custom automation schedules for daily routines without including any security systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section style="background:#f4f7fc;">
+    <h2 style="text-align:center; color:#0b3c8c; margin-bottom:40px;">
+      Automation in Action
+    </h2>
+
+    <div class="videos">
+      <iframe src="https://www.youtube.com/embed/1kUE0BZtTRc" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/6dE9XGz8w4U" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/4rjKk0eYwFQ" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+  <p><strong>Phone:</strong> 
+    <a href="tel:+919883213584" style="color:white; text-decoration:none;">
+      +91-9883213584
+    </a>
+  </p>
+
+  <p><strong>Email:</strong> 
+    <a href="mailto:director@argentalisautomation.com" 
+       style="color:white; text-decoration:none;">
+      director@argentalisautomation.com
+    </a>
+  </p>
+
+  <br/>
+  <p><strong>ARGENTALIS AUTOMATION (OPC) PRIVATE LIMITED</strong></p>
+  <p>CIN: U27104WB2025OPC277705</p>
+  <p>Reg. Off.: Dakbanglow Road, Midnapore, Tantigeria, West Midnapore</p>
+  <p>PIN – 721102, West Bengal, India</p>
+</footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* ==============================
+       UPDATE THIS VALUE REGULARLY
+       ============================== */
+    const ENERGY_SAVED_KWH = 12500;
+
+    /* 1 kWh ≈ 0.82 kg CO₂ (India avg) */
+    const CO2_PER_KWH = 0.82;
+
+    let counter = 0;
+    const speed = ENERGY_SAVED_KWH / 120;
+
+    const counterElement = document.getElementById("energyCounter");
+    const carbonElement = document.getElementById("carbonText");
+
+    const interval = setInterval(() => {
+      counter += speed;
+      if (counter >= ENERGY_SAVED_KWH) {
+        counter = ENERGY_SAVED_KWH;
+        clearInterval(interval);
+      }
+      counterElement.textContent = Math.floor(counter) + " kWh";
+      const carbonSaved = Math.floor(counter * CO2_PER_KWH);
+      carbonElement.textContent = 
+        "Equivalent Carbon Emissions Reduced: " + carbonSaved + " kg CO₂";
+    }, 20);
+  </script>
+
+</body>
+</html>
