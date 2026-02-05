@@ -50,7 +50,7 @@
       padding: 70px 10%;
     }
 
-    /* COUNTER */
+    /* ================= COUNTER ================= */
     .counter-section {
       background: var(--accent);
       text-align: center;
@@ -85,7 +85,7 @@
       font-size: 1.1rem;
     }
 
-    /* PRODUCT CAPABILITIES – 2 PER ROW */
+    /* ================= PRODUCT CAPABILITIES ================= */
     .capabilities {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -104,7 +104,6 @@
       transform: translateY(-6px);
     }
 
-    /* LANDSCAPE IMAGE */
     .card img {
       width: 100%;
       height: 260px;
@@ -120,7 +119,7 @@
       margin-bottom: 10px;
     }
 
-    /* SHORTS CARDS */
+    /* ================= SHORTS ================= */
     .shorts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -172,10 +171,20 @@
       margin-bottom: 8px;
     }
 
-    /* RESPONSIVE */
+    /* ================= RESPONSIVE ================= */
     @media (max-width: 900px) {
       .capabilities {
         grid-template-columns: 1fr;
+      }
+
+      /* ONLY REQUESTED CHANGE */
+      .card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card img {
+        object-position: top;
       }
     }
 
@@ -195,7 +204,7 @@
     <p>Smart Home Automation for Comfort, Efficiency & Energy Savings</p>
   </header>
 
-  <!-- SAVINGS -->
+  <!-- SAVINGS COUNTER -->
   <section class="counter-section">
     <div class="counter-box">
       <h2>Savings So Far</h2>
@@ -213,7 +222,6 @@
 
     <div class="capabilities">
 
-      <!-- CARD 1 -->
       <div class="card">
         <img src="Lighting automation.jpeg" alt="Lighting Automation">
         <div class="card-content">
@@ -222,7 +230,6 @@
         </div>
       </div>
 
-      <!-- CARD 2 -->
       <div class="card">
         <img src="Appliance control.jpeg" alt="Appliance Control">
         <div class="card-content">
@@ -231,7 +238,6 @@
         </div>
       </div>
 
-      <!-- CARD 3 -->
       <div class="card">
         <img src="Energy Monitoring.jpeg" alt="Energy Monitoring">
         <div class="card-content">
@@ -240,7 +246,6 @@
         </div>
       </div>
 
-      <!-- CARD 4 -->
       <div class="card">
         <img src="Smart Scheduling.jpeg" alt="Smart Scheduling">
         <div class="card-content">
@@ -286,6 +291,7 @@
     <p>Dakbanglow Road, Midnapore, West Bengal – 721102</p>
   </footer>
 
+  <!-- COUNTER SCRIPT -->
   <script>
     const SAVINGS_KWH = (363 * 4) + 127;
     const CO2_PER_KWH = 0.82;
