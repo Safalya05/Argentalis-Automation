@@ -50,6 +50,7 @@
       padding: 70px 10%;
     }
 
+    /* COUNTER */
     .counter-section {
       background: var(--accent);
       text-align: center;
@@ -65,7 +66,12 @@
 
     .counter-box h2 {
       color: var(--primary);
-      margin-bottom: 10px;
+    }
+
+    .counter-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 15px;
     }
 
     .counter-value {
@@ -79,32 +85,34 @@
       font-size: 1.1rem;
     }
 
+    /* PRODUCT CAPABILITIES – 2 PER ROW */
     .capabilities {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
     }
 
     .card {
       background: white;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
+    /* LANDSCAPE IMAGE */
     .card img {
       width: 100%;
-      height: 180px;
+      height: 260px;
       object-fit: cover;
     }
 
     .card-content {
-      padding: 20px;
+      padding: 24px;
     }
 
     .card-content h3 {
@@ -112,16 +120,45 @@
       margin-bottom: 10px;
     }
 
-    .videos {
+    /* SHORTS CARDS */
+    .shorts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
     }
 
-    iframe {
+    .short-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .short-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .short-card img {
       width: 100%;
-      height: 220px;
-      border-radius: 12px;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0,0,0,0.65);
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     footer {
@@ -135,8 +172,11 @@
       margin-bottom: 8px;
     }
 
-    footer strong {
-      font-weight: 600;
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
@@ -149,16 +189,17 @@
 
 <body>
 
-  <!-- LANDING / HERO -->
+  <!-- HERO -->
   <header>
     <h1>Argentalis Automation (OPC) Private Limited</h1>
     <p>Smart Home Automation for Comfort, Efficiency & Energy Savings</p>
   </header>
 
-  <!-- ENERGY COUNTER -->
+  <!-- SAVINGS -->
   <section class="counter-section">
     <div class="counter-box">
-      <h2>Energy Saved So Far</h2>
+      <h2>Savings So Far</h2>
+      <div class="counter-subtitle">Savings since October 2025</div>
       <div class="counter-value" id="energyCounter">0</div>
       <div class="carbon" id="carbonText"></div>
     </div>
@@ -171,102 +212,100 @@
     </h2>
 
     <div class="capabilities">
+
+      <!-- CARD 1 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e" alt="Lighting Automation">
+        <img src="Lighting automation.jpeg" alt="Lighting Automation">
         <div class="card-content">
           <h3>Lighting Automation</h3>
-          <p>Automated lighting based on schedules, occupancy and ambient conditions to reduce energy wastage.</p>
+          <p>Automated lighting based on schedules, occupancy and ambient conditions.</p>
         </div>
       </div>
 
+      <!-- CARD 2 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1592928302636-c83cf1e1c887" alt="Appliance Control">
+        <img src="Appliance control.jpeg" alt="Appliance Control">
         <div class="card-content">
           <h3>Appliance Control</h3>
-          <p>Smart control of household appliances through mobile apps and centralized control panels.</p>
+          <p>Centralized control of home appliances using smart automation systems.</p>
         </div>
       </div>
 
+      <!-- CARD 3 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1558002038-1055907df827" alt="Energy Monitoring">
+        <img src="Energy Monitoring.jpeg" alt="Energy Monitoring">
         <div class="card-content">
           <h3>Energy Monitoring</h3>
-          <p>Real-time energy consumption tracking to help users optimize usage and reduce electricity bills.</p>
+          <p>Track real-time energy usage to optimize consumption.</p>
         </div>
       </div>
 
+      <!-- CARD 4 -->
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Smart Scheduling">
+        <img src="Smart Scheduling.jpeg" alt="Smart Scheduling">
         <div class="card-content">
           <h3>Smart Scheduling</h3>
-          <p>Custom automation schedules for daily routines without including any security systems.</p>
+          <p>Automation routines customized to daily lifestyles.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- VIDEOS -->
+  <!-- SHORTS -->
   <section style="background:#f4f7fc;">
     <h2 style="text-align:center; color:#0b3c8c; margin-bottom:40px;">
       Automation in Action
     </h2>
 
-    <div class="videos">
-      <iframe src="https://www.youtube.com/embed/1kUE0BZtTRc" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/6dE9XGz8w4U" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/4rjKk0eYwFQ" allowfullscreen></iframe>
+    <div class="shorts-grid">
+      <a class="short-card" href="https://youtube.com/shorts/ZFom86h-qJU" target="_blank">
+        <div class="play-icon">▶</div>
+        <img src="https://img.youtube.com/vi/ZFom86h-qJU/hqdefault.jpg">
+      </a>
+
+      <a class="short-card" href="https://youtube.com/shorts/2s7CA-NW00c" target="_blank">
+        <div class="play-icon">▶</div>
+        <img src="https://img.youtube.com/vi/2s7CA-NW00c/hqdefault.jpg">
+      </a>
+
+      <a class="short-card" href="https://youtube.com/shorts/ihiXeFg4l3E" target="_blank">
+        <div class="play-icon">▶</div>
+        <img src="https://img.youtube.com/vi/ihiXeFg4l3E/hqdefault.jpg">
+      </a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-  <p><strong>Phone:</strong> 
-    <a href="tel:+919883213584" style="color:white; text-decoration:none;">
-      +91-9883213584
-    </a>
-  </p>
+    <p><strong>Phone:</strong> +91-9883213584</p>
+    <p><strong>Email:</strong> director@argentalisautomation.com</p>
+    <br>
+    <p><strong>ARGENTALIS AUTOMATION (OPC) PRIVATE LIMITED</strong></p>
+    <p>CIN: U27104WB2025OPC277705</p>
+    <p>Dakbanglow Road, Midnapore, West Bengal – 721102</p>
+  </footer>
 
-  <p><strong>Email:</strong> 
-    <a href="mailto:director@argentalisautomation.com" 
-       style="color:white; text-decoration:none;">
-      director@argentalisautomation.com
-    </a>
-  </p>
-
-  <br/>
-  <p><strong>ARGENTALIS AUTOMATION (OPC) PRIVATE LIMITED</strong></p>
-  <p>CIN: U27104WB2025OPC277705</p>
-  <p>Reg. Off.: Dakbanglow Road, Midnapore, Tantigeria, West Midnapore</p>
-  <p>PIN – 721102, West Bengal, India</p>
-</footer>
-
-
-  <!-- JAVASCRIPT -->
   <script>
-    /* ==============================
-       UPDATE THIS VALUE REGULARLY
-       ============================== */
-    const ENERGY_SAVED_KWH = 12500;
-
-    /* 1 kWh ≈ 0.82 kg CO₂ (India avg) */
+    const SAVINGS_KWH = (363 * 4) + 127;
     const CO2_PER_KWH = 0.82;
 
     let counter = 0;
-    const speed = ENERGY_SAVED_KWH / 120;
+    const speed = SAVINGS_KWH / 120;
 
     const counterElement = document.getElementById("energyCounter");
     const carbonElement = document.getElementById("carbonText");
 
     const interval = setInterval(() => {
       counter += speed;
-      if (counter >= ENERGY_SAVED_KWH) {
-        counter = ENERGY_SAVED_KWH;
+      if (counter >= SAVINGS_KWH) {
+        counter = SAVINGS_KWH;
         clearInterval(interval);
       }
       counterElement.textContent = Math.floor(counter) + " kWh";
-      const carbonSaved = Math.floor(counter * CO2_PER_KWH);
-      carbonElement.textContent = 
-        "Equivalent Carbon Emissions Reduced: " + carbonSaved + " kg CO₂";
+      carbonElement.textContent =
+        "Equivalent Carbon Emissions Reduced Since October 2025: " +
+        Math.floor(counter * CO2_PER_KWH) + " kg CO₂";
     }, 20);
   </script>
 
